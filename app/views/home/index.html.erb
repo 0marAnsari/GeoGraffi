@@ -6,7 +6,9 @@
   <%= link_to 'Home', root_path, class: 'btn btn-secondary' %>
   <%= link_to 'All Entries', entries_path, class: 'btn btn-primary' %>
   <%= link_to 'Add New Entry', new_entry_path, class: 'btn btn-success' %>
+  <%= link_to 'Account Information', edit_user_path(current_user), class: 'btn btn-info' %>
 </div>
+
 
 <!-- Google Map -->
 <div id="map" style="height: 500px; width: 100%;"></div>

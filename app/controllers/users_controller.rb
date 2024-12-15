@@ -14,6 +14,23 @@ class UsersController < ApplicationController
     end
   end  
 
+   # Display the account information for the logged-in user
+   def edit
+    @user = current_user
+  end
+
+  # Update account information
+  def update
+    @user = current_user
+
+    if @user.update(user_params)
+      redirect_to edit_user_path, notice: "Account information updated successfully!"
+    else
+      flash[:alert] = "Failed to update account information. Please check the form and try again."
+      render :edit
+    end
+  end
+
   private
 
   def user_params
