@@ -1,0 +1,47 @@
+<!-- Header Navigation -->
+<div class="header-links">
+  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %>
+  <%= link_to 'All Entries', entries_path, class: 'btn btn-primary' %>
+  <%= link_to 'Add New Entry', new_entry_path, class: 'btn btn-success' %>
+</div>
+<h1>Your Graffiti Entries</h1>
+
+<div>
+  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %>
+</div>
+
+<% if @entries.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @entries.each do |entry| %>
+        <tr>
+          <td>
+            <% if entry.image_url.present? %>
+              <img src="<%= entry.image_url %>" alt="Graffiti" style="width: 100px; height: auto;">
+            <% else %>
+              No Image
+            <% end %>
+          </td>
+          <td><%= entry.description %></td>
+          <td><%= entry.address %></td>
+          <td>
+            <%= link_to 'View', entry_path(entry), class: 'btn btn-primary' %> |
+            <%= link_to 'Edit', edit_entry_path(entry), class: 'btn btn-warning' %> |
+            <%= link_to 'Delete', entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>You haven't added any graffiti entries yet.</p>
+  <p><%= link_to 'Add a New Entry', new_entry_path, class: 'btn btn-success' %></p>
+<% end %>

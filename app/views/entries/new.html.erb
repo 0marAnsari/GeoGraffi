@@ -1,3 +1,9 @@
+<!-- Header Navigation -->
+<div class="header-links">
+  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %>
+  <%= link_to 'All Entries', entries_path, class: 'btn btn-primary' %>
+  <%= link_to 'Add New Entry', new_entry_path, class: 'btn btn-success' %>
+</div>
 <h1>New Graffiti Entry</h1>
 
 <%= form_with(model: @entry, local: true) do |form| %>

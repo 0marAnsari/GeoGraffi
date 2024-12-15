@@ -1,19 +1,61 @@
-<h1>Welcome to Graffiti Mapper</h1>
 
+<h1>Graffiti Map</h1>
+
+<!-- Header Navigation -->
+<div class="header-links">
+  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %>
+  <%= link_to 'All Entries', entries_path, class: 'btn btn-primary' %>
+  <%= link_to 'Add New Entry', new_entry_path, class: 'btn btn-success' %>
+</div>
+
+<!-- Google Map -->
+<div id="map" style="height: 500px; width: 100%;"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places"></script>
+<script src="https://unpkg.com/@googlemaps/markerclusterer"></script>
+
+<script>
+  async function initMap() {
+    const map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 41.8781, lng: -87.6298 }, // Default to Chicago
+      zoom: 10,
+    });
+
+    const response = await fetch('/api/entries');
+    const entries = await response.json();
+
+    const markers = entries.map(entry => {
+      const marker = new google.maps.Marker({
+        position: { lat: entry.latitude, lng: entry.longitude },
+        map,
+      });
+
+      const infoWindow = new google.maps.InfoWindow({
+        content: `
+          <div>
+            <h4>${entry.description}</h4>
+            <p>${entry.address}</p>
+            <img src="${entry.image_url}" alt="Graffiti" style="width:100px; height:auto;" />
+          </div>
+        `,
+      });
+
+      marker.addListener('mouseover', () => {
+        infoWindow.open(map, marker);
+      });
+
+      marker.addListener('mouseout', () => {
+        infoWindow.close();
+      });
+
+      return marker;
+    });
+
+    new MarkerClusterer({ map, markers });
+  }
+
+  window.onload = initMap;
+</script>
 <% if logged_in? %>
-  <p>Hello, <%= current_user.username %>!</p>
-  <p><%= link_to 'Log Out', logout_path, method: :delete %></p>
-  
-  <h2>Your Entries</h2>
-  <% if @entries.any? %>
-    <ul>
-      <% @entries.each do |entry| %>
-        <li><%= link_to entry.description, entry_path(entry) %></li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>You haven't added any entries yet. <%= link_to 'Add one', new_entry_path %>.</p>
-  <% end %>
-<% else %>
-  <p><%= link_to 'Sign Up', signup_path %> or <%= link_to 'Log In', login_path %> to get started!</p>
+  <%= button_to 'Log Out', logout_path, method: :delete, class: 'btn btn-danger' %>
 <% end %>
