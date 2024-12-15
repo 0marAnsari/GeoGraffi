@@ -6,10 +6,8 @@
 </div>
 <h1>Your Graffiti Entries</h1>
 
-<div>
-  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %>
-</div>
 
+<!-- Entries Table -->
 <% if @entries.any? %>
   <table>
     <thead>
@@ -17,6 +15,9 @@
         <th>Image</th>
         <th>Description</th>
         <th>Address</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Time Created</th> <!-- New Column -->
         <th>Actions</th>
       </tr>
     </thead>
@@ -25,23 +26,24 @@
         <tr>
           <td>
             <% if entry.image_url.present? %>
-              <img src="<%= entry.image_url %>" alt="Graffiti" style="width: 100px; height: auto;">
+              <img src="<%= entry.image_url %>" alt="Graffiti Image" style="max-width: 200px;">
             <% else %>
               No Image
             <% end %>
           </td>
           <td><%= entry.description %></td>
           <td><%= entry.address %></td>
+          <td><%= entry.latitude %></td>
+          <td><%= entry.longitude %></td>
+          <td><%= entry.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td> <!-- Display formatted time -->
           <td>
-            <%= link_to 'View', entry_path(entry), class: 'btn btn-primary' %> |
-            <%= link_to 'Edit', edit_entry_path(entry), class: 'btn btn-warning' %> |
-            <%= link_to 'Delete', entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <%= link_to 'Edit', edit_entry_path(entry), class: 'btn btn-warning btn-sm' %>
+            <%= link_to 'Delete', entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% else %>
-  <p>You haven't added any graffiti entries yet.</p>
-  <p><%= link_to 'Add a New Entry', new_entry_path, class: 'btn btn-success' %></p>
+  <p>No graffiti entries found. <%= link_to 'Add New Entry', new_entry_path, class: 'btn btn-success' %></p>
 <% end %>

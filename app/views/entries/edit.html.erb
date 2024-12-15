@@ -1,0 +1,28 @@
+<h1>Edit Graffiti Entry</h1>
+
+<!-- Header Navigation -->
+<div class="header-links">
+  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %>
+  <%= link_to 'All Entries', entries_path, class: 'btn btn-primary' %>
+</div>
+
+<%= form_with(model: @entry, local: true) do |form| %>
+  <div>
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url, placeholder: "Enter image URL", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address, placeholder: "Enter address", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description, placeholder: "Enter a description", required: true %>
+  </div>
+
+  <div>
+    <%= form.submit "Update Entry", class: 'btn btn-success' %>
+  </div>
+<% end %>

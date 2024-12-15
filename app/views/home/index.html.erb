@@ -1,5 +1,5 @@
 
-<h1>Graffiti Map</h1>
+<h1>GeoGraffi</h1>
 
 <!-- Header Navigation -->
 <div class="header-links">
@@ -12,50 +12,52 @@
 <div id="map" style="height: 500px; width: 100%;"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places"></script>
-<script src="https://unpkg.com/@googlemaps/markerclusterer"></script>
+<script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
 
 <script>
   async function initMap() {
-    const map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: 41.8781, lng: -87.6298 }, // Default to Chicago
-      zoom: 10,
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: { lat: 41.8781, lng: -87.6298 }, // Chicago coordinates
     });
 
-    const response = await fetch('/api/entries');
-    const entries = await response.json();
+    // Use marker data from Rails
+    const graffitiMarkers = <%= raw @graffiti_markers.to_json %>;
 
-    const markers = entries.map(entry => {
+    const markers = graffitiMarkers.map((markerData) => {
       const marker = new google.maps.Marker({
-        position: { lat: entry.latitude, lng: entry.longitude },
+        position: { lat: markerData.lat, lng: markerData.lng },
         map,
       });
 
       const infoWindow = new google.maps.InfoWindow({
         content: `
           <div>
-            <h4>${entry.description}</h4>
-            <p>${entry.address}</p>
-            <img src="${entry.image_url}" alt="Graffiti" style="width:100px; height:auto;" />
+            <h4>${markerData.description}</h4>
+            <p>${markerData.address}</p>
+            <img src="${markerData.image_url}" alt="Graffiti Image" style="width:100px; height:auto;" />
           </div>
         `,
       });
 
-      marker.addListener('mouseover', () => {
+      marker.addListener("click", () => {
         infoWindow.open(map, marker);
-      });
-
-      marker.addListener('mouseout', () => {
-        infoWindow.close();
       });
 
       return marker;
     });
 
-    new MarkerClusterer({ map, markers });
+    // Enable marker clustering
+    new MarkerClusterer(map, markers, {
+      imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+    });
   }
 
   window.onload = initMap;
 </script>
+
+
+<!-- Log Out Button -->
 <% if logged_in? %>
   <%= button_to 'Log Out', logout_path, method: :delete, class: 'btn btn-danger' %>
 <% end %>
