@@ -1,0 +1,26 @@
+
+<h1>Log In</h1>
+
+<%= form_with(url: sessions_path, local: true) do |form| %>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email, placeholder: "Enter your email", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password, placeholder: "Enter your password", required: true %>
+  </div>
+
+  <div>
+    <%= form.submit "Log In", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<p>Don't have an account? <%= link_to 'Sign Up', signup_path %></p>

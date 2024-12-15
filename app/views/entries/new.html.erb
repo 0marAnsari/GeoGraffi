@@ -1,0 +1,22 @@
+<h1>New Graffiti Entry</h1>
+
+<%= form_with(model: @entry, local: true) do |form| %>
+  <div>
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url, placeholder: "Enter image URL" %>
+  </div>
+
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address, placeholder: "Enter address" %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description, placeholder: "Enter a description" %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Entry" %>
+  </div>
+<% end %>

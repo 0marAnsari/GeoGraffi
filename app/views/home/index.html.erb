@@ -1,0 +1,19 @@
+<h1>Welcome to Graffiti Mapper</h1>
+
+<% if logged_in? %>
+  <p>Hello, <%= current_user.username %>!</p>
+  <p><%= link_to 'Log Out', logout_path, method: :delete %></p>
+  
+  <h2>Your Entries</h2>
+  <% if @entries.any? %>
+    <ul>
+      <% @entries.each do |entry| %>
+        <li><%= link_to entry.description, entry_path(entry) %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>You haven't added any entries yet. <%= link_to 'Add one', new_entry_path %>.</p>
+  <% end %>
+<% else %>
+  <p><%= link_to 'Sign Up', signup_path %> or <%= link_to 'Log In', login_path %> to get started!</p>
+<% end %>

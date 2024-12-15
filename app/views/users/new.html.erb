@@ -1,0 +1,40 @@
+<h1>Sign Up</h1>
+
+<%= form_with(model: @user, url: users_path, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div class="error-messages">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this account from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :username %>
+    <%= form.text_field :username, placeholder: "Enter your username", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email, placeholder: "Enter your email", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password, placeholder: "Enter your password", required: true %>
+  </div>
+
+  <div>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, placeholder: "Confirm your password", required: true %>
+  </div>
+
+  <div>
+    <%= form.submit "Sign Up", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<p>Already have an account? <%= link_to 'Log In', login_path %></p>
