@@ -6,7 +6,7 @@ The historical foundations of this tool can be explained by the legend Futura, c
 
 The application serves as a tool to catalog graffiti flicks in an ordered format, where you can list the writer's name, crew, a description of the piece, and the address it was taken it. The address works as a geocoding tool for a map that shows you where you've taken graffiti flicks, and who was up when you took it. Like a Strava for graff, showing you where you've been and where you could go to find more graff. Enjoy, it's pretty easy to use.
 
-Important note: Be careful what you upload, this app is made to be a PokeDex of OTHER writers, which scratches that part of my mind that is reminded that vandalism is illegal, and cities have entire departments allocated to finding them. I know nothing about data security yet, so it's better to be safe than sorry.But more importantly, app or not, keep a blackbook and never stop writing. If enough people end up using this, I will be able to use empirical evidence to fact-check anybody claiming to be all-city.
+Important note: Be careful what you upload, this app is made to be a PokeDex of OTHER writers, which scratches that part of my mind that is reminded that vandalism is illegal, and cities have entire departments allocated to finding them. I know nothing about data security yet, so it's better to be safe than sorry. If enough people end up using this, I will be able to use empirical evidence to fact-check anybody claiming to be all-city. But more importantly, app or not, keep a blackbook and never stop writing.
 
 If you ever knew a chubby brown guy whose friends called him NEMO, peace.
 
