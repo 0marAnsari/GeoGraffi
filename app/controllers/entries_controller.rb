@@ -15,7 +15,6 @@ class EntriesController < ApplicationController
   def create
     @entry = current_user.entries.new(entry_params)
 
-    # Debugging: Log the parameters and entry object
     Rails.logger.debug("Entry Params: #{entry_params.inspect}")
     Rails.logger.debug("New Entry: #{@entry.inspect}")
 
@@ -30,7 +29,6 @@ class EntriesController < ApplicationController
       end
     end
 
-    # Save the entry and handle errors
     if @entry.save
       Rails.logger.debug("Entry Saved: #{@entry.inspect}")
       redirect_to entries_path, notice: "Graffiti entry created successfully!"

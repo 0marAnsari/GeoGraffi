@@ -1,10 +1,9 @@
 class HomeController < ApplicationController
+  before_action :require_login, only: [:index] # Enforce login for the homepage
+
   def index
-    if logged_in?
-      @entries = current_user.entries
-    else
-      @entries = Entry.all # Show all entries if the user is not logged in (optional)
-    end
+    # Only fetch current_user entries if logged in
+    @entries = current_user.entries if logged_in?
 
     @graffiti_markers = @entries.select(:latitude, :longitude, :description, :address, :image_url, :name).map do |entry|
       {
