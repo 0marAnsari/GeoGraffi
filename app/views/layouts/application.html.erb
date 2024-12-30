@@ -14,17 +14,18 @@
 
   <body class="dark-mode">
 
-      <!-- Header Navigation -->
-      <nav id="navigation" class="menu z-30 bg-dark p-3 shadow-sm d-flex flex-column align-items-center">
-        <%= image_tag "GeoGraffiW.png", class: "img-fluid", alt: "GeoGraffi Logo", size: "200x100" %>
+    <!-- Header Navigation -->
+    <nav id="navigation" class="menu z-30 bg-dark p-3 shadow-sm d-flex flex-column align-items-center">
+      <%= image_tag "GeoGraffiW.png", class: "img-fluid", alt: "GeoGraffi Logo", size: "200x100" %>
+      <% if logged_in? %>
         <div class="d-flex justify-content-center mt-3">
           <a href="<%= root_path %>" class="text-decoration-none me-3 text-light">Home</a>
           <a href="<%= entries_path %>" class="text-decoration-none me-3 text-light">Entries</a>
           <a href="<%= new_entry_path %>" class="text-decoration-none me-3 text-light">New Entry</a>
           <a href="<%= edit_user_path(current_user) %>" class="text-decoration-none text-light">Account</a>
         </div>
-      </nav>
-
+      <% end %>
+    </nav>
 
     <%= yield %>
   </body>

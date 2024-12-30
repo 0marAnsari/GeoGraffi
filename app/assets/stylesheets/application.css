@@ -1,36 +1,16 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- *= require_tree .
- *= require_self
- */
-
-/* General Body Styling */
-body {
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light text */
-  font-family: Arial, sans-serif; /* Optional: Set a clean font for the entire app */
-  margin: 0;
-  padding: 0;
-}
-
 /* Dark Mode Styling for the Entire App */
 body.dark-mode {
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light text */
+  background-color: #2C2F34; /* Slightly lighter background */
+  color: #e0e0e0; /* Light text remains */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
   font-family: Arial, sans-serif; /* Optional: Add a clean font */
 }
 
 #navigation {
-  background-color: #1e1e1e; /* Dark background */
+  background-color: #2C2F34; /* Match the body background color */
   color: #e0e0e0; /* Light text color */
-  border-bottom: 1px solid #333; /* Optional bottom border for separation */
+  border-bottom: 1px solid #444; /* Optional bottom border for separation */
 }
 
 #navigation a {
@@ -47,11 +27,10 @@ body.dark-mode {
   margin-bottom: 10px; /* Add spacing below the logo */
 }
 
-
 /* Button Styling */
 .btn {
   color: #ffffff;
-  background-color: #1e90ff; /* Blue button background */
+  background-color: #1e90ff; /* Blue button background remains */
   border-color: #1e90ff;
 }
 
@@ -62,7 +41,7 @@ body.dark-mode {
 
 /* Table Styling */
 .table {
-  background-color: #1e1e1e; /* Dark background for the table */
+  background-color: #2C2F34; /* Match body and navbar color */
   color: #ffffff; /* White text for all cells */
   border-collapse: collapse; /* Ensure borders are neatly collapsed */
   border: 1px solid #444; /* Border for the entire table */
@@ -75,12 +54,12 @@ body.dark-mode {
 }
 
 .table th {
-  background-color: #333; /* Darker background for headers */
+  background-color: #3A3D42; /* Slightly darker header background */
   color: #ffffff; /* Ensure header text is white */
 }
 
 .table td {
-  background-color: #1e1e1e; /* Dark background for cells */
+  background-color: #2C2F34; /* Match body and navbar color */
   color: #ffffff !important; /* Ensure text is always white */
 }
 
@@ -90,19 +69,18 @@ body.dark-mode {
 }
 
 .table tr:nth-child(even) td {
-  background-color: #2c2c2c; /* Slightly lighter background for even rows */
+  background-color: #35383C; /* Slightly lighter background for even rows */
   border: 1px solid #444; /* Match border color */
 }
 
 .table tr:nth-child(odd) td {
-  background-color: #1e1e1e; /* Dark background for odd rows */
+  background-color: #2C2F34; /* Match body background */
   border: 1px solid #444; /* Match border color */
 }
 
-
 /* Form Container Styling */
 form {
-  background-color: #1e1e1e;
+  background-color: #2C2F34; /* Match body background */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -120,16 +98,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer Styling */
 footer {
-  background-color: #1e1e1e;
+  background-color: #2C2F34; /* Match body background */
   color: #e0e0e0;
-  border-top: 1px solid #333;
+  border-top: 1px solid #444;
   padding: 10px 0;
   text-align: center;
 }
 
 /* Modal Styling (If used in the app) */
 .modal-content {
-  background-color: #1e1e1e;
+  background-color: #2C2F34; /* Match body background */
   color: #e0e0e0;
 }
 
@@ -139,9 +117,44 @@ footer {
 }
 
 .bg-dark {
-  background-color: #1e1e1e !important;
+  background-color: #2C2F34 !important; /* Match body background */
 }
 
 .text-dark {
   color: #121212 !important;
+}
+
+/* Target the InfoWindow main container */
+.gm-style-iw {
+  background-color: #2C2F34 !important; /* Match body background */
+  color: #ffffff !important; /* Ensure text is white */
+  border-radius: 8px; /* Round corners */
+  border: 2px solid #2C2F34 !important; /* Match the inner color for seamless look */
+  box-shadow: none !important; /* Remove default shadow */
+}
+
+/* Target the content wrapper inside InfoWindow */
+.gm-style-iw-c {
+  padding: 10px !important; /* Add padding for better spacing */
+  overflow: hidden !important; /* Prevent overflow issues */
+}
+
+/* Target the header container */
+.gm-style-iw-ch {
+  background-color: #2C2F34 !important; /* Match body background */
+  border-bottom: 2px solid #444 !important; /* Optional: subtle bottom border */
+}
+
+/* Target the top-close (tc) button */
+.gm-style-iw-tc button {
+  background-color: #444 !important; /* Dark background for close button */
+  color: #ffffff !important; /* White text or icon for the close button */
+  border: none !important; /* Remove default borders */
+  border-radius: 50%; /* Optional: make the button circular */
+  padding: 5px; /* Adjust size */
+  cursor: pointer; /* Add pointer cursor for interactivity */
+}
+
+.gm-style-iw-tc button:hover {
+  background-color: #555 !important; /* Lighter background on hover */
 }

@@ -1,26 +1,30 @@
 
-<h1>Log In to GeoGraffi</h1>
+<h1 class="d-flex justify-content-center">Log In to GeoGraffi</h1>
 
-<%= form_with(url: sessions_path, local: true) do |form| %>
-  <% if flash[:alert] %>
-    <div class="alert alert-danger">
-      <%= flash[:alert] %>
+<div class="d-flex justify-content-center">
+  <%= form_with(url: sessions_path, local: true, class: "w-50") do |form| %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger text-center">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :email, "Email", class: "form-label" %>
+      <%= form.email_field :email, placeholder: "Enter your email", required: true, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :password, "Password", class: "form-label" %>
+      <%= form.password_field :password, placeholder: "Enter your password", required: true, class: "form-control" %>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <%= form.submit "Log In", class: "btn btn-primary mt-3" %>
     </div>
   <% end %>
+</div>
 
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email, placeholder: "Enter your email", required: true %>
-  </div>
-
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, placeholder: "Enter your password", required: true %>
-  </div>
-
-  <div>
-    <%= form.submit "Log In", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<p>Don't have an account? <%= link_to 'Sign Up', signup_path %></p>
+<div class="d-flex justify-content-center mt-3">
+  <p>Don't have an account? <%= link_to 'Sign Up', signup_path, class: "text-primary" %></p>
+</div>
