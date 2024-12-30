@@ -73,13 +73,13 @@ class EntriesController < ApplicationController
   # Provide JSON data for all entries (used by the map)
   def json_index
     @entries = Entry.all
-    render json: @entries.as_json(only: [:id, :latitude, :longitude, :description, :image_url, :address])
+    render json: @entries.as_json(only: [:id, :latitude, :longitude, :description, :image_url, :address, :name])
   end
 
   private
 
   # Strong parameters for entry
   def entry_params
-    params.require(:entry).permit(:image_url, :address, :description)
+    params.require(:entry).permit(:image_url, :address, :description, :name)
   end
 end

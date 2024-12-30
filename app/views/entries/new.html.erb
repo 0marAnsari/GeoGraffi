@@ -1,28 +1,30 @@
-<!-- Header Navigation -->
-<div class="header-links">
-  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %>
-  <%= link_to 'All Entries', entries_path, class: 'btn btn-primary' %>
-  <%= link_to 'Add New Entry', new_entry_path, class: 'btn btn-success' %>
-</div>
-<h1>New Graffiti Entry</h1>
 
+<h1 class="d-flex justify-content-center">New Entry</h1>
+<div class="d-flex justify-content-center">
 <%= form_with(model: @entry, local: true) do |form| %>
   <div>
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name, required: true, class: "form-control", placeholder: "Enter graffiti name" %>
+  </div>
+
+  <div>
     <%= form.label :image_url %>
-    <%= form.text_field :image_url, placeholder: "Enter image URL" %>
+    <%= form.text_field :image_url, placeholder: "Enter image URL", class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :address %>
-    <%= form.text_field :address, placeholder: "Enter address" %>
+    <%= form.text_field :address, placeholder: "Enter address", class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :description %>
-    <%= form.text_area :description, placeholder: "Enter a description" %>
+    <%= form.text_area :description, placeholder: "Enter a description", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit "Create Entry" %>
-  </div>
+<div class="d-flex justify-content-center">
+  <%= form.submit "Save Entry", class: "btn btn-success mt-3" %>
+</div>
+</div>
+
 <% end %>

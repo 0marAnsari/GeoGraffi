@@ -1,49 +1,68 @@
-<!-- Header Navigation -->
-<div class="header-links">
-  <%= link_to 'Home', root_path, class: 'btn btn-secondary' %>
-  <%= link_to 'All Entries', entries_path, class: 'btn btn-primary' %>
-  <%= link_to 'Add New Entry', new_entry_path, class: 'btn btn-success' %>
-</div>
-<h1>Your Graffiti Entries</h1>
-
 
 <!-- Entries Table -->
 <% if @entries.any? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Description</th>
-        <th>Address</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>Time Created</th> <!-- New Column -->
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @entries.each do |entry| %>
+  <div class="d-flex justify-content-center">
+    <table class="table table-bordered table-striped w-75">
+      <thead class="thead-light">
         <tr>
-          <td>
-            <% if entry.image_url.present? %>
-              <img src="<%= entry.image_url %>" alt="Graffiti Image" style="max-width: 200px;">
-            <% else %>
-              No Image
-            <% end %>
-          </td>
-          <td><%= entry.description %></td>
-          <td><%= entry.address %></td>
-          <td><%= entry.latitude %></td>
-          <td><%= entry.longitude %></td>
-          <td><%= entry.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td> <!-- Display formatted time -->
-          <td>
-            <%= link_to 'Edit', edit_entry_path(entry), class: 'btn btn-warning btn-sm' %>
-            <%= link_to 'Delete', entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
-          </td>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Address</th>
+          <th>Time Created</th>
+          <th>Actions</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @entries.each_with_index do |entry, index| %>
+          <tr>
+            <td><%= entry.name %></td>
+            <td>
+              <% if entry.image_url.present? %>
+                <img
+                  src="<%= entry.image_url %>"
+                  alt="Graffiti Image"
+                  style="max-width: 200px; cursor: pointer;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal<%= index %>"
+                >
+              <% else %>
+                No Image
+              <% end %>
+            </td>
+            <td><%= entry.description %></td>
+            <td><%= entry.address %></td>
+            <td><%= entry.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+            <td>
+              <%= link_to 'Edit', edit_entry_path(entry), class: 'btn btn-warning btn-sm' %>
+              <%= link_to 'Delete', entry_path(entry), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+            </td>
+          </tr>
+
+          <!-- Modal for 80% Image Preview -->
+          <div
+            class="modal fade"
+            id="imageModal<%= index %>"
+            tabindex="-1"
+            aria-labelledby="imageModalLabel<%= index %>"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg" style="max-width: 80%; height: 80%;">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="imageModalLabel<%= index %>">Image Preview</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                  <img src="<%= entry.image_url %>" alt="Preview Image" class="img-fluid" style="max-height: 100%; max-width: 100%;">
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% else %>
-  <p>No graffiti entries found. <%= link_to 'Add New Entry', new_entry_path, class: 'btn btn-success' %></p>
+  <p class="text-center">No graffiti entries found. <%= link_to 'Add New Entry', new_entry_path, class: 'btn btn-success' %></p>
 <% end %>
