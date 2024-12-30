@@ -1,6 +1,6 @@
 # Background & Motivation
 
-If you have ever walked anywhere with me, realizing you find yourself walking ahead alone, that I have stopped walking to look at something. You might wonder what I'm doing, why I'm staring intently at the cracks in the concrete. I'm looking at graffiti, admiring someone's crisp whiteout lines, trying to make out what a meanstreak tag reads, or ducking into an alleyway because my eye caught the edge of a throw-up. People like me, our senses are restless when confronted with an empty brick wall, our eyes can't help locking onto underpasses, rooftops, benches, light poles, and alleyways. This app is my love letter to graffiti.
+If you have ever walked anywhere with me, realizing you find yourself walking ahead alone, that I have stopped to look at something. If you wonder why I'm staring intently at the cracks in the concrete, I'm looking at graffiti, admiring someone's crisp whiteout lines, trying to make out what a meanstreak tag reads, or ducking into an alleyway because my eye caught the edge of a throw-up. People like me, our senses are restless when confronted with an empty brick wall, our eyes can't help locking onto underpasses, rooftops, benches, light poles, and alleyways. This app is my love letter to graffiti.
 
 The historical foundations of this application can be explained by legendary graffiti artist Futura: https://youtu.be/6ik9Ga0FvLI
 
