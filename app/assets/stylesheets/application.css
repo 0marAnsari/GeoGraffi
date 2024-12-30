@@ -4,18 +4,20 @@ body.dark-mode {
   color: #e0e0e0; /* Light text remains */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
-  font-family: Arial, sans-serif; /* Optional: Add a clean font */
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 #navigation {
   background-color: #2C2F34; /* Match the body background color */
   color: #e0e0e0; /* Light text color */
   border-bottom: 1px solid #444; /* Optional bottom border for separation */
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 #navigation a {
   color: #e0e0e0 !important; /* Ensure links are light-colored */
   text-decoration: none;
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 #navigation a:hover {
@@ -27,11 +29,26 @@ body.dark-mode {
   margin-bottom: 10px; /* Add spacing below the logo */
 }
 
+/* General Body Styling */
+body {
+  background-color: #26292D; /* Updated dark background */
+  color: #e0e0e0; /* Light text */
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure headers and other typography also inherit the font */
+h1, h2, h3, h4, h5, h6, p, a, span, button, input, textarea {
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
 /* Button Styling */
 .btn {
   color: #ffffff;
   background-color: #1e90ff; /* Blue button background remains */
   border-color: #1e90ff;
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 .btn:hover {
@@ -46,16 +63,19 @@ body.dark-mode {
   border-collapse: collapse; /* Ensure borders are neatly collapsed */
   border: 1px solid #444; /* Border for the entire table */
   margin-top: 20px; /* Adds space between the table and the header */
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 .table th, .table td {
   border: 1px solid #444; /* Set border color for cells */
   padding: 10px; /* Add padding for better readability */
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 .table th {
   background-color: #3A3D42; /* Slightly darker header background */
   color: #ffffff; /* Ensure header text is white */
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 .table td {
@@ -84,16 +104,19 @@ form {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 /* Log Out Button Centering */
 .d-flex.justify-content-center .btn {
   margin-bottom: 20px; /* Adds spacing below the button */
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 /* Pages: Entry, Edit, Account Information */
 h1, h2, h3, h4, h5, h6 {
   color: #e0e0e0;
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 /* Footer Styling */
@@ -103,58 +126,22 @@ footer {
   border-top: 1px solid #444;
   padding: 10px 0;
   text-align: center;
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
 /* Modal Styling (If used in the app) */
 .modal-content {
   background-color: #2C2F34; /* Match body background */
   color: #e0e0e0;
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
 
-/* Additional Utility Classes */
-.text-light {
-  color: #e0e0e0 !important;
-}
-
-.bg-dark {
-  background-color: #2C2F34 !important; /* Match body background */
-}
-
-.text-dark {
-  color: #121212 !important;
-}
-
-/* Target the InfoWindow main container */
+/* InfoWindow Custom Styling */
 .gm-style-iw {
   background-color: #2C2F34 !important; /* Match body background */
   color: #ffffff !important; /* Ensure text is white */
   border-radius: 8px; /* Round corners */
   border: 2px solid #2C2F34 !important; /* Match the inner color for seamless look */
   box-shadow: none !important; /* Remove default shadow */
-}
-
-/* Target the content wrapper inside InfoWindow */
-.gm-style-iw-c {
-  padding: 10px !important; /* Add padding for better spacing */
-  overflow: hidden !important; /* Prevent overflow issues */
-}
-
-/* Target the header container */
-.gm-style-iw-ch {
-  background-color: #2C2F34 !important; /* Match body background */
-  border-bottom: 2px solid #444 !important; /* Optional: subtle bottom border */
-}
-
-/* Target the top-close (tc) button */
-.gm-style-iw-tc button {
-  background-color: #444 !important; /* Dark background for close button */
-  color: #ffffff !important; /* White text or icon for the close button */
-  border: none !important; /* Remove default borders */
-  border-radius: 50%; /* Optional: make the button circular */
-  padding: 5px; /* Adjust size */
-  cursor: pointer; /* Add pointer cursor for interactivity */
-}
-
-.gm-style-iw-tc button:hover {
-  background-color: #555 !important; /* Lighter background on hover */
+  font-family: 'DM Sans', Arial, sans-serif; /* DM Sans applied */
 }
