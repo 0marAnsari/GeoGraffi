@@ -1,3 +1,13 @@
+#Background
+
+If you have ever walked anywhere with me, you might have found yourself walking ahead, turning your head back, and realizing that I have stopped walking to look at something. Most of the time, I'm looking at graffiti, admiring someone's crisp whiteout lines, trying to make out what a meanstreak tag reads, or ducking into an alleyway because my eye caught the edge of a throw-up. People like me, our senses are restless when confronted with an empty brick wall, our eyes can't help locking onto underpasses, rooftops, benches, light poles, and alleyways. This app is my love letter to graffiti.
+
+The historical foundations of this application can be explained by legendary graffiti artist Futura: https://youtu.be/6ik9Ga0FvLI
+
+The application serves as a tool to catalog graffiti flicks in an ordered format, where you can list the writer's name, crew, a description of the piece, and the address it was taken it. The address is important because it works as a geocoding tool for a map that shows you where you've taken graffiti flicks, and who was up when you took it. Like a Strava for graff, showing you where you've been and where you could go to find more graff. Enjoy, it's pretty easy to use.
+
+Important note: Be careful what you upload, this app is made to be a PokeDex of OTHER writers, which scratches that part of my mind that is reminded that vandalism is illegal, and cities have entire departments allocated to finding them. I know nothing about data security yet, so it's better to be safe than sorry. But more importantly, app or not, keep a blackbook and never stop writing.
+
 # Rails Template
 
 This is a base Ruby on Rails repository configured for learning with Codespaces (and Gitpod).
