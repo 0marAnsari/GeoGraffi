@@ -1,6 +1,6 @@
 # Background & Motivation
 
-If you have ever walked anywhere with me, you might find yourself walking ahead alone, realizing that I've stopped to look at something. If you wonder why I'm staring intently at the cracks in the concrete, I'm admiring someone's crisp whiteout lines, trying to make out a meanstreak tag, or ducking into an alleyway because my eye caught the edge of a throw-up. People like me, our senses are restless when confronted with an empty brick wall, our eyes can't help locking onto underpasses, rooftops, benches, light poles, and alleyways. I'm thankful for every train ride I've ever taken, every time I've wondered how they got up there, and every opportunity I have to be caught in the grip of the city. This project is my love letter to graffiti.
+Walk with me and you might find yourself walking ahead alone, realizing I've stopped to look at something. You may wonder why I stare so intently at the cracks in the concrete, whiteout on a sign post, or waxy scribbles on an alleyway dumpster. People like me, our senses restless when confronted with an empty brick wall, our eyes reflexively locking onto underpasses, rooftops, benches, light poles, and alleyways. I'm thankful for every train ride I've ever taken, every time I've wondered how they got up there, and every opportunity I have to be caught in the grip of the city. This project is my love letter to graffiti.
 
 The historical foundations of this tool can be explained by the legend Futura, courtesy of Marc Ecko: https://youtu.be/6ik9Ga0FvLI
 
