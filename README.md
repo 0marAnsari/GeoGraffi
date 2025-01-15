@@ -6,6 +6,6 @@ The historical foundations of this tool can be explained by the legend Futura, c
 
 The application serves as a tool to catalog graffiti flicks in an ordered format, where you can list the writer's name, crew, a description of the piece, and the address it was taken it. The address works as a geocoding tool for a map that shows you where you've taken graffiti flicks, and who was up when you took it. Like a Strava for graff, showing you where you've been and where you could go to find more graff. Enjoy, it's pretty easy to use.
 
-This app is **NOT FOR ACTIVE WRITERS**, it's for nerds like me who want to catalog the pieces we see in the street. You should know better than to post your own work to a geolocating app that could be used to trace your movements. For now, this app will **ONLY SHOW YOU YOUR OWN PICTURES** because that way I won't be providing an information platform for vandal squads or rival writers with vendettas looking to get other writers locked up.
+This app is **NOT FOR ACTIVE WRITERS**, it's for half-stepping nerds like me who want to catalog the pieces we see in the street. You should know better than to post your own work to a geolocating app that could be used to trace your movements. For now, this app will **ONLY SHOW YOU YOUR OWN PICTURES** because that way I won't be providing an information platform for vandal squads or rival writers with vendettas looking to get other writers locked up.
 
 If you ever knew a chubby brown guy whose friends called him NEMO, peace.
